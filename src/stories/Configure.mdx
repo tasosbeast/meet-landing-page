@@ -1,0 +1,316 @@
+import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/blocks";
+import React from "react";
+
+<Meta title="Design System/Style Guide" />
+
+# Meet – Design System
+
+A comprehensive guide to the visual language used across the Meet platform. This document helps ensure consistency, accessibility, and brand cohesion.
+
+## 🎨 Color System
+
+### Primary Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Cyan"
+    subtitle="Primary action colors"
+    colors={{
+      "Cyan-600": "#4D96A9",
+      "Cyan-300": "#8FE3F9",
+    }}
+  />
+  <ColorItem
+    title="Purple"
+    subtitle="Secondary accent colors"
+    colors={{
+      "Purple-600": "#855FB1",
+      "Purple-300": "#D9B8FF",
+    }}
+  />
+</ColorPalette>
+
+### Neutral Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Slate"
+    subtitle="Text and UI elements"
+    colors={{
+      "Slate-900": "#28283D",
+      "Slate-600": "#87879D",
+      "Slate-300": "#D1D1DF",
+    }}
+  />
+  <ColorItem
+    title="Background"
+    subtitle="Page backgrounds"
+    colors={{ White: "#FAFAFA" }}
+  />
+</ColorPalette>
+
+### Usage Guidelines
+
+- **Primary actions**: Use Cyan-600 for CTAs and key interactions
+- **Secondary actions**: Use Purple-600 for alternative paths
+- **Text**: Use Slate-900 for headings, Slate-600 for body text
+- **Backgrounds**: Use White for main content areas
+- **Hover states**: Use Cyan-300/Purple-300 for hover effects on buttons
+
+## ✍️ Typography
+
+<div style={{ fontFamily: "'Red Hat Display', sans-serif" }}>
+  <Typeset
+    fontFamily="'Red Hat Display', sans-serif"
+    fontSizes={["64px", "40px", "32px", "18px", "16px"]}
+    fontWeight={900}
+    sampleText="Group Chat for Everyone"
+  />
+</div>
+
+### Font Family
+
+```css
+font-family: "Red Hat Display", sans-serif;
+```
+
+### Type Scale
+
+<div style={{ marginTop: "24px" }}>
+  {[
+    {
+      name: "Heading 1",
+      size: "64px",
+      weight: "900",
+      lineHeight: "1.1",
+      usage: "Hero headlines",
+      notes: "Tight line height for impact, use sparingly",
+    },
+    {
+      name: "Heading 2",
+      size: "40px",
+      weight: "900",
+      lineHeight: "1.1",
+      usage: "Section headlines",
+      notes: "Maintains tight spacing for clean headlines",
+    },
+    {
+      name: "Heading 3",
+      size: "32px",
+      weight: "900",
+      lineHeight: "1.2",
+      usage: "Sub-sections",
+      notes: "Slightly more breathing room for readability",
+    },
+    {
+      name: "Body",
+      size: "18px",
+      weight: "500",
+      lineHeight: "1.5",
+      usage: "Main content",
+      notes: "Standard spacing for comfortable reading",
+    },
+    {
+      name: "Small/UI",
+      size: "16px",
+      weight: "500",
+      lineHeight: "1.5",
+      usage: "Interface elements",
+      notes: "Same spacing as body for consistency",
+    },
+  ].map((type) => (
+    <div
+      key={type.name}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        marginBottom: "16px",
+        padding: "16px",
+        borderRadius: "8px",
+        background: "rgba(77, 150, 169, 0.05)",
+        borderLeft: "4px solid #4D96A9",
+      }}
+    >
+      <div
+        style={{
+          width: "120px",
+          fontFamily: "'Red Hat Display', sans-serif",
+          fontWeight: type.weight,
+          fontSize: type.size,
+          lineHeight: type.lineHeight,
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+      >
+        {type.name}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          gap: "24px",
+          flex: 1,
+          color: "#87879D",
+        }}
+      >
+        <div style={{ width: "80px" }}>
+          <strong>{type.size}</strong>
+          <div style={{ fontSize: "12px", marginTop: "4px" }}>Size</div>
+        </div>
+        <div style={{ width: "80px" }}>
+          <strong>{type.weight}</strong>
+          <div style={{ fontSize: "12px", marginTop: "4px" }}>Weight</div>
+        </div>
+        <div style={{ width: "100px" }}>
+          <strong>{type.lineHeight}</strong>
+          <div style={{ fontSize: "12px", marginTop: "4px" }}>Line height</div>
+        </div>
+        <div style={{ flex: 1 }}>
+          <div>{type.usage}</div>
+          <div
+            style={{
+              fontSize: "13px",
+              marginTop: "4px",
+              fontStyle: "italic",
+              color: "#87879D",
+            }}
+          >
+            {type.notes}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+## 📏 Spacing System
+
+Our spacing system uses an 8px base unit with multipliers for consistency.
+
+<div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+  {[
+    { name: "1400", value: "112px" },
+    { name: "1000", value: "80px" },
+    { name: "800", value: "64px" },
+    { name: "500", value: "40px" },
+    { name: "300", value: "24px" },
+    { name: "200", value: "16px" },
+    { name: "100", value: "8px" },
+  ].map((size) => (
+    <div key={size.name} style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ width: "60px" }}>
+        <strong>{size.name}</strong>
+      </div>
+      <div
+        style={{
+          width: size.value,
+          height: "24px",
+          backgroundColor: "#4D96A9",
+          borderRadius: "4px",
+        }}
+      />
+      <div style={{ marginLeft: "16px" }}>{size.value}</div>
+    </div>
+  ))}
+</div>
+
+## 🔄 Component Usage Patterns
+
+### Buttons
+
+- **Primary**: Use Cyan-600 background with white text for main actions
+- **Secondary**: Use Purple-600 background with white text for alternative actions
+- **Disabled**: Use Slate-300 with Slate-600 text for unavailable actions
+
+### Layout
+
+- Use spacing tokens consistently for margins and padding
+- Maintain 16px/24px gutters between layout elements
+- Consider mobile-first design with responsive breakpoints at 768px and 1440px
+
+## 📱 Responsive Breakpoints
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
+    marginTop: "24px",
+  }}
+>
+  {[
+    {
+      name: "Mobile",
+      value: "<768px",
+      description: "Mobile devices",
+      color: "#855FB1",
+    },
+    {
+      name: "Tablet",
+      value: "≥768px",
+      description: "Tablets",
+      color: "#4D96A9",
+    },
+    {
+      name: "Desktop",
+      value: "≥1440px",
+      description: "Large screens",
+      color: "#28283D",
+    },
+  ].map((breakpoint, index) => (
+    <div
+      key={breakpoint.name}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        padding: "16px 24px",
+        borderRadius: "8px",
+        background: `${breakpoint.color}10`,
+        boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "48px",
+          height: "48px",
+          borderRadius: "50%",
+          background: breakpoint.color,
+          color: "#FFFFFF",
+          marginRight: "24px",
+          fontWeight: "bold",
+          fontSize: "16px",
+        }}
+      >
+        {index + 1}
+      </div>
+      <div>
+        <div
+          style={{ fontWeight: "900", fontSize: "20px", marginBottom: "4px" }}
+        >
+          {breakpoint.name}
+        </div>
+        <div style={{ display: "flex", gap: "16px" }}>
+          <span
+            style={{
+              fontFamily: "monospace",
+              color: breakpoint.color,
+              fontWeight: "bold",
+              padding: "2px 8px",
+              background: "rgba(255,255,255,0.7)",
+              borderRadius: "4px",
+            }}
+          >
+            {breakpoint.value}
+          </span>
+          <span>{breakpoint.description}</span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+---
+
+This design system ensures a cohesive user experience across all Meet platform components.
