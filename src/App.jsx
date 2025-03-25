@@ -1,4 +1,3 @@
-import "./App.scss";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Realtors from "./components/Realtors";
