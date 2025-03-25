@@ -1,16 +1,7 @@
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
+import "./App.scss";
 
 function App() {
-  return (
-    <div className="App min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-      </main>
-      <footer></footer>
-    </div>
-  );
+  return <div>hello</div>;
 }
 
 export default App;
