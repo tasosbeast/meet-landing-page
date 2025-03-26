@@ -4,20 +4,25 @@
   grid-column: center-start / center-end;
   margin: 15rem 0;
   display: grid;
-  grid-template-columns: subgrid;
-
-  &__wrapper {
-    // This spans from the second column to the second-to-last column
-    // of the parent's "center" section (which has 8 columns)
-    grid-column: col-start 2 / col-end 7;
-
-    // Create the actual grid for the features
-    display: grid;
-    grid-template-columns: subgrid;
-    gap: 6rem;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6rem;
+  align-items: start;
 }
 
 .feature {
-  grid-column: span 2;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 2.5rem;
+  row-gap: 1.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
 }

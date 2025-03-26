@@ -1,58 +1,68 @@
 import React from "react";
 import "./_Features.scss";
 
+import spriteSheet from "../assets/img/sprite.svg";
+
 // Feature item component
-const FeatureItem = ({ icon, title, description, index }) => {
-  return <div className="feature">feature {index}</div>;
+const FeatureItem = ({ iconId, title, description, index }) => {
+  return (
+    <div className="feature">
+      <svg className="feature__icon">
+        <use href={`${spriteSheet}#${iconId}`}></use>
+      </svg>
+
+      <h4 className="heading-4 heading-4--dark">{title}</h4>
+      <p className="feature__text">{description}</p>
+    </div>
+  );
 };
 
 const Features = () => {
   // Feature data
   const featureItems = [
     {
-      icon: "/src/assets/built-for-modern-use.svg", // Update with your actual icon path
-      title: "Built for modern use",
-      description: "Smarter meetings, all in one place",
+      iconId: "icon-global", // Update with your actual icon path
+      title: "World's best luxury homes",
+      description:
+        "Treat yourself to a luxury home located in the heart of your city",
     },
     {
-      icon: "/src/assets/easy-to-implement.svg", // Update with your actual icon path
-      title: "Easy to implement",
-      description: "No complicated setup required, simply plug in and go",
+      iconId: "icon-trophy", // Update with your actual icon path
+      title: "Only the best properties",
+      description: "Handpicked by our experts for your ultimate comfort",
     },
     {
-      icon: "/src/assets/encrypted.svg", // Update with your actual icon path
-      title: "State-of-the-art encryption",
-      description: "Your data is secured and encrypted end-to-end",
+      iconId: "icon-map-pin", // Update with your actual icon path
+      title: "All homes in top locations",
+      description: "Located in the most desirable areas of the city",
     },
     {
-      icon: "/src/assets/meeting-settings.svg", // Update with your actual icon path
-      title: "Customizable meeting settings",
-      description: "Adjust parameters and settings to fit your needs",
+      iconId: "icon-key", // Update with your actual icon path
+      title: "New home in one week",
+      description: "Move into your new home in just one week",
     },
     {
-      icon: "/src/assets/fast-connection.svg", // Update with your actual icon path
-      title: "Fast connection",
-      description: "Low latency for real-time communication",
+      iconId: "icon-presentation", // Update with your actual icon path
+      title: "Top 1% realtors",
+      description: "Our top 1% realtors help you find the best home",
     },
     {
-      icon: "/src/assets/screen-sharing.svg", // Update with your actual icon path
-      title: "Screen sharing",
-      description: "Share your screen for more effective communication",
+      iconId: "icon-lock", // Update with your actual icon path
+      title: "Secure payments on nexter",
+      description: "We ensure your payments are secure and safe",
     },
   ];
 
   return (
     <section className="features">
-      <div className="features__wrapper">
-        {featureItems.map((feature, index) => (
-          <FeatureItem
-            key={index + 1}
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-          />
-        ))}
-      </div>
+      {featureItems.map((feature, index) => (
+        <FeatureItem
+          key={index + 1}
+          iconId={feature.iconId}
+          title={feature.title}
+          description={feature.description}
+        />
+      ))}
     </section>
   );
 };

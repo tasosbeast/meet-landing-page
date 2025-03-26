@@ -1,7 +1,7 @@
 import "./_Header.scss";
 
 function Header() {
-  return <header className="header">Header</header>;
+  return <div className="header">Header</div>;
 }
 
 export default Header;
