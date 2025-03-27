@@ -1,10 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./_Features.scss";
 
 import spriteSheet from "../assets/img/sprite.svg";
 
-// Feature item component
-const FeatureItem = ({ iconId, title, description, index }) => {
+const FeatureItem = ({ iconId, title, description }) => {
   return (
     <div className="feature">
       <svg className="feature__icon">
@@ -15,6 +15,12 @@ const FeatureItem = ({ iconId, title, description, index }) => {
       <p className="feature__text">{description}</p>
     </div>
   );
+};
+
+FeatureItem.propTypes = {
+  iconId: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 const Features = () => {
