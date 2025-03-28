@@ -2,26 +2,27 @@
 
 .features {
   grid-column: center-start / center-end;
-  margin: 15rem 0;
+  margin: $space-xl 0;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 6rem;
+  gap: $space-lg;
   align-items: start;
 }
 
 .feature {
   display: grid;
   grid-template-columns: min-content 1fr;
-  gap: 1.5rem;
+  gap: $space-xs;
 
   &__icon {
     fill: $color-primary;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: $space-md;
+    height: $space-md;
     grid-row: 1 / span 2;
   }
 
   &__text {
-    font-size: 1.7rem;
+    font-size: $font-size-sm;
   }
 }
