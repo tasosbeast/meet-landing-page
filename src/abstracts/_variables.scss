@@ -1,15 +1,42 @@
 // COLOR VARIABLES
+// Primary colors
 $color-primary: #c69963;
 $color-primary-dark: #b28451;
 
+// Secondary colors
 $color-secondary: #101d2c;
 
+// Grey Shades
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
-
 $color-grey-dark-1: #54483a;
 $color-grey-dark-2: #6d5d4b;
+
+// Black and White
+$color-black: #000;
+$color-white: #fff;
 
 // FONT VARIABLES
 $font-primary: "Nunito", sans-serif;
 $font-display: "Josefin Sans", sans-serif;
+
+// FONT WEIGHT VARIABLES
+$font-weight-light: 300; // Light font weight for body text
+$font-weight-normal: 400; // Normal font weight for headings
+
+// LINE HEIGHT VARIABLES
+$line-height-sm: 1; // Small line height for headings
+$line-height-lg: 1.6; // Medium line height for body text
+
+// SPACING VARIABLES
+$space-xs: 1.5rem; // Small spacing for tight components
+$space-sm: 4rem; // Medium spacing for component padding
+$space-md: 4.5rem; // Standard spacing for sections
+$space-lg: 6rem; // Large spacing for major sections
+$space-xl: 15rem; // Extra large spacing for full sections
+
+// FONT SIZE VARIABLES 4rem 1.9rem 1.6rem
+
+$font-size-sm: 1.6rem; // Small font size for captions
+$font-size-md: 1.9rem; // Medium font size for body text
+$font-size-xl: 4rem; // Extra large font size for headings
